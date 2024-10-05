@@ -1,0 +1,14 @@
+input[type=submit]{
+    /* color:green; */
+    background-color:#04AA6D;
+    
+}
+input{
+    border-radius: 10px;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
