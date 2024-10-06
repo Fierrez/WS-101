@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" action="output.html">
+        <form method="POST" action="output.php">
             <div>
-            <label>Enter a number for a:</label>
+                Y767or a:</label>
             <input type="number" name="a"></div>
             <div>
             <label>Enter a number for b:</label>
