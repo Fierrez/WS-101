@@ -11,7 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PHP CRUD App</title>
-        <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+
     </head>
 
     <body>
@@ -20,19 +23,7 @@
 
         <div class="container">
             <div class="container">
-                <a href="add.php" class="btn btn-dark">Add New</a>
-                <table class="table table-hover text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-
+                <a href="home.php" class="btn btn-dark">Add New</a>
                     <tbody>
                         <table class="table table-hover text-center">
                             <thead class="table-dark">
@@ -47,7 +38,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $sql = "Enter SQL code to select all records from table";
+                                    $sql = "SELECT * from Employee";
                                     $result = mysqli_query($conn, $sql);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
@@ -70,7 +61,7 @@
         </div>
 
 
-        <script src="/Bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
     
     
     </body>
