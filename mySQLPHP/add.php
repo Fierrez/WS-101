@@ -13,7 +13,7 @@
         <title>PHP CRUD App</title>
 
         <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+
 
     </head>
 
@@ -33,6 +33,8 @@
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Gender</th>
+                                    <th scope="col">Course</th>
+                                    <th scope="col">Address</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -48,7 +50,9 @@
                                     <td><?php echo $row["last_name"] ?></td>
                                     <td><?php echo $row["email"] ?></td>
                                     <td><?php echo $row["gender"] ?></td>
-                                    <td></td>
+                                    <td><?php echo $row["Course"] ?></td>
+                                    <td><?php echo $row["Address"] ?></td>
+                                    <td><button type="submit" class="btn btn-dark" name="submit">Delete</button></td>
                                 </tr>
                                 <?php
                                     }

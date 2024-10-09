@@ -1,3 +1,26 @@
+<?php
+    include "dbase_connect.php" ;
+
+    if (isset($_POST["submit"])) {
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $gender = $_POST['gender'];
+        $address = $_POST['address'];
+        $course = $_POST['course'];
+        $sql = "INSERT INTO `employee`(`first_name`, `last_name`, `email`, `gender`,`course`,`address`) VALUES ('$first_name','$last_name','$email','$gender','$course','$address')";
+
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            header("Location: add.php?msg=New record created successfully");
+        } else {
+            echo "Failed: " . mysqli_error($conn);
+        }
+    }
+?>
+
+
 
 
 <!DOCTYPE html>
@@ -18,7 +41,7 @@
                 <p class="text-muted">Accomplish the form below</p>
             </div>
             <div clas="container d-flex justify-content-center">
-                <form action="add.php" method="post" style=" min-width: 300px;">
+                <form action="" method="post" style=" min-width: 300px;">
                     
                     <div class="row mb-3">
                         <div class="col">
@@ -33,6 +56,15 @@
                             <label class="form-label">Email:</label>
                             <input type="text" class="form-control" name="email" placeholder="YourEmail">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Course:</label>
+                            <input type="text" class="form-control" name="course" placeholder="YourCourse">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address:</label>
+                            <input type="text" class="form-control" name="address" placeholder="YourAddress">
+                        </div>
+
                     </div>
 
                     <div class="form-group mb-3" style="display: flex; justify-content: center;">
@@ -59,26 +91,5 @@
     </body>
 </html>
 
-
-
-<?php
-    include "dbase_connect.php" ;
-
-    if (isset($_POST["submit"])) {
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $gender = $_POST['gender'];
-        $sql = "INSERT INTO `employee`(`id`, `first_name`, `last_name`, `email`, `gender`) VALUES (2,'$first_name','$last_name','$email','$gender')";
-
-        $result = mysqli_query($conn, $sql);
-
-        if ($result) {
-            header("Location: add.php?msg=New record created successfully");
-        } else {
-            echo "Failed: " . mysqli_error($conn);
-        }
-    }
-?>
 
 
